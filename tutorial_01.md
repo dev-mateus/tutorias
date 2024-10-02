@@ -10,6 +10,15 @@ No terminal CMD do Windows, navegue até a pasta (diretório) onde você salva s
 npx create-next-app@latest to-do-app
 ```
 
+```bash
+√ Would you like to use TypeScript? ... No / Yes
+√ Would you like to use ESLint? ... No / Yes
+√ Would you like to use Tailwind CSS? ... No / Yes
+√ Would you like to use `src/` directory? ... No / Yes
+√ Would you like to use App Router? (recommended) ... No / Yes
+√ Would you like to customize the default import alias (@/*)? ... No / Yes
+```
+
 Esse comando vai criar uma pasta (diretório) com o nome que você criou seu projeto, no caso *to-do-app*
 
 Entre na pasta do projeto com o comando abaixo:
@@ -101,26 +110,26 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded shadow-lg w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4 text-center">Lista de Tarefas</h1>
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="bg-gray-800 p-8 rounded shadow-lg w-full max-w-md">
+        <h1 className="text-2xl font-bold mb-4 text-center text-gray-100">Lista de Tarefas</h1>
         <div className="mb-4">
           <input
             type="text"
             placeholder="Descrição da tarefa"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
-            className="w-full p-2 mb-2 border rounded"
+            className="w-full p-2 mb-2 border border-gray-600 rounded bg-gray-700 text-gray-300"
           />
           <input
             type="datetime-local"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
-            className="w-full p-2 mb-2 border rounded"
+            className="w-full p-2 mb-2 border border-gray-600 rounded bg-gray-700 text-gray-300"
           />
           <button
             onClick={addTask}
-            className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
+            className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
           >
             Adicionar Tarefa
           </button>
@@ -130,10 +139,10 @@ export default function Home() {
           {tasks.map((task) => (
             <li
               key={task.id}
-              className="flex justify-between items-center p-2 bg-gray-200 rounded"
+              className="flex justify-between items-center p-2 bg-gray-700 rounded"
             >
               <div>
-                <p>{task.text}</p>
+                <p className="text-gray-200">{task.text}</p>
                 <p className="text-sm text-gray-500">{task.dueDate}</p>
               </div>
               <button
@@ -152,10 +161,7 @@ export default function Home() {
 ```
 
 Explicação do Código:
-Hooks (useState): Estamos usando useState para controlar o estado da lista de tarefas, o texto da nova tarefa e a data de conclusão.
-Função addTask: Adiciona uma nova tarefa à lista.
-Função deleteTask: Remove uma tarefa com base no seu id.
-Tailwind CSS: Usamos classes do Tailwind CSS para estilizar inputs, botões e a lista de tarefas.
+
 
 ## 3. Executar o App
 ### Passo 5: Executar o App
