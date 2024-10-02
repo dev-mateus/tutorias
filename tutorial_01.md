@@ -197,9 +197,9 @@ type Task = {
 };
 ```
 Define-se um tipo Task que representa uma tarefa com três propriedades:
-id: número que serve como identificador único da tarefa (baseado no timestamp da data de criação).
-text: a descrição da tarefa.
-dueDate: uma string que representa a data e hora de vencimento da tarefa.
+#### **id:** número que serve como identificador único da tarefa (baseado no timestamp da data de criação).
+#### **text:** a descrição da tarefa.
+#### **dueDate:** uma string que representa a data e hora de vencimento da tarefa.
 
 Essa definição em TypeScript está criando um tipo chamado Task. Um tipo em TypeScript define a estrutura esperada para um objeto, especificando quais propriedades ele deve ter e quais tipos de valores essas propriedades devem armazenar.
 
@@ -217,9 +217,9 @@ const [tasks, setTasks] = useState<Task[]>([]);
 const [newTask, setNewTask] = useState("");
 const [dueDate, setDueDate] = useState("");
 ```
-tasks: armazena a lista de tarefas. Começa como um array vazio e é atualizado à medida que as tarefas são adicionadas ou removidas.
-newTask: armazena o texto da nova tarefa a ser adicionada. Inicialmente vazio.
-dueDate: armazena a data de vencimento da nova tarefa
+#### **tasks:** armazena a lista de tarefas. Começa como um array vazio e é atualizado à medida que as tarefas são adicionadas ou removidas.
+#### **newTask:** armazena o texto da nova tarefa a ser adicionada. Inicialmente vazio.
+#### **dueDate:** armazena a data de vencimento da nova tarefa
 
 ### Função de Adicionar Tarefa (addTask):
 
