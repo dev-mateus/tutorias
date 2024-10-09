@@ -33,15 +33,18 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 ### 2.3. **Configurar o Prisma Client no Next.js**
 
    - No diretório `src/`, crie uma nova pasta chamada `lib/`.
-   - Dentro de `lib/`, crie o arquivo prisma.ts com o seguinte conteúdo:
+   - Dentro de `lib/`, crie o arquivo `prisma.ts` com o seguinte conteúdo:
 
    ```ts
     import { PrismaClient } from '@prisma/client';
+
     const globalForPrisma = global as unknown as { prisma: PrismaClient };
+
     export const prisma = globalForPrisma.prisma || new PrismaClient();
+
     if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
    ```
-   
+
 ## **3. Definir o Modelo de Dados**
 
 ### 3.1. **Atualizar o Arquivo schema.prisma**
@@ -77,9 +80,9 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 ## **5. Implementar as Funcionalidades de API**
 
 ### 5.1. **Crie a estrutura de pastas para a API:**
-   - Dentro de src/app/, crie a pasta api/.
-   - Dentro de api/, crie a pasta tasks/.
-   - Dentro de tasks/, crie o arquivo route.ts.
+   - Dentro de `src/app/`, crie a pasta `api/`.
+   - Dentro de `api/`, crie a pasta `tasks/`.
+   - Dentro de `tasks/`, crie o arquivo `route.ts`.
    
    A estrutura ficará assim:
    
