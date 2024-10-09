@@ -17,17 +17,22 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 
 ## **2. Configurar o Prisma no Projeto**
 
-### 2.1. **Atualizar o Arquivo .env**
+### 2.1. **Instalar o Prisma Client**
+   - Instale o Prisma Client:
+     ```bash
+     npm install @prisma/client
+     ```
+   - Inicialize o Prisma dentro do projeto:
+
+     ```bash
+     npx prisma init
+     ```
+
+### 2.2. **Atualizar o Arquivo .env**
    - No seu projeto, localize o arquivo `.env` na raiz.
    - Substitua o valor da variável `DATABASE_URL` pela URL de conexão do NeonDB:
      ```bash
      DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
-     ```
-
-### 2.2. **Instalar o Prisma Client**
-   - Caso ainda não tenha feito, instale o Prisma Client:
-     ```bash
-     npm install @prisma/client
      ```
 
 ### 2.3. **Configurar o Prisma Client no Next.js**
