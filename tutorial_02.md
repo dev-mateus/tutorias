@@ -6,27 +6,27 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 
 ### **1. Configurar o Banco de Dados PostgreSQL no NeonDB**
 
-1. **Criar uma Conta no NeonDB**
+#### 1.1. **Criar uma Conta no NeonDB**
    - Acesse [NeonDB](https://neon.tech/) e crie uma conta, se ainda não tiver uma.
 
-2. **Criar um Novo Projeto**
+#### 1.2. **Criar um Novo Projeto**
    - Após o login, clique em "Create Database" para criar um novo banco de dados.
    - Escolha um nome para o banco de dados e clique em "Create".
 
-3. **Obter a URL de Conexão**
+#### 1.3. **Obter a URL de Conexão**
    - Depois de criar o banco de dados, você verá as informações de conexão.
    - Copie a URL de conexão fornecida (deve ser algo como `postgresql://USER:PASSWORD@HOST:PORT/DATABASE`).
 
 ### **2. Configurar o Prisma no Projeto**
 
-1. **Atualizar o Arquivo .env**
+#### 2.1. **Atualizar o Arquivo .env**
    - No seu projeto, localize o arquivo `.env` na raiz.
    - Substitua o valor da variável `DATABASE_URL` pela URL de conexão do NeonDB:
      ```bash
      DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
      ```
 
-2. **Instalar o Prisma Client**
+#### 2.2. **Instalar o Prisma Client**
    - Caso ainda não tenha feito, instale o Prisma Client:
      ```bash
      npm install @prisma/client
@@ -34,7 +34,7 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 
 ### **3. Definir o Modelo de Dados**
 
-1. **Atualizar o Arquivo schema.prisma**
+#### 3.1. **Atualizar o Arquivo schema.prisma**
    - No diretório `prisma`, abra o arquivo `schema.prisma`.
    - Verifique se o modelo `Task` está definido conforme abaixo:
      ```ts
@@ -57,7 +57,7 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 
 ### **4. Realizar a Migração do Banco de Dados**
 
-1. **Executar a Migração**
+#### 4.1. **Executar a Migração**
    - No terminal, execute o seguinte comando para criar a tabela no banco de dados NeonDB:
      ```bash
      npx prisma migrate dev --name init
@@ -66,7 +66,7 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 
 ### **5. Implementar as Funcionalidades de API**
 
-1. **Verificar e Atualizar a Rota de API**
+#### 5.1. **Verificar e Atualizar a Rota de API**
    - Verifique se o arquivo `src/app/api/tasks/route.ts` está corretamente implementado para interagir com o banco de dados:
      ```typescript
      import { prisma } from '@/lib/prisma';
@@ -113,7 +113,7 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 
 ### **6. Atualizar o Frontend**
 
-1. **Verificar e Atualizar o Arquivo page.tsx**
+#### 6.1. **Verificar e Atualizar o Arquivo page.tsx**
    - Assegure-se de que o arquivo `src/app/page.tsx` está implementado corretamente para utilizar as funcionalidades do banco de dados:
      ```typescript
      "use client";
@@ -247,14 +247,14 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
      }
      ```
 
-### Testando a Aplicação
+### **7. Testando a Aplicação**
 
-1. **Iniciar o Servidor**
+#### 7.1. **Iniciar o Servidor**
    - No terminal, inicie o servidor Next.js:
      ```bash
      npm run dev
      ```
 
-2. **Testar Funcionalidades**
+#### 7.2. **Testar Funcionalidades**
    - Acesse o aplicativo em `http://localhost:3000`.
    - Teste as funcionalidades de **adicionar**, **listar** e **remover** tarefas. Verifique se as tarefas estão sendo armazenadas no banco de dados no NeonDB.
