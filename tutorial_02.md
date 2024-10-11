@@ -30,11 +30,7 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 
 ### 2.2. **Atualizar o Arquivo .env**
    - No seu projeto, localize o arquivo `.env` na raiz.
-   - Substitua o valor da variável `DATABASE_URL` pela URL copiada no passo [1.3](#13-obter-a-url-de-conexão), essa URL é responsável pela conexão da App com o servidor NeonDB:
-
-     ```bash
-     DATABASE_URL="postgresql://neondb_owner:fRuJN4gV9adQ@ep-wispy-moon-a5sokf2p.us-east-2.aws.neon.tech/neondb?sslmode=require"
-     ```
+   - Substitua o valor da variável `DATABASE_URL` pela URL copiada no passo [1.3](#13-obter-a-url-de-conexão), essa URL é responsável pela conexão da App com o servidor NeonDB.
 
 ### 2.3. **Configurar o Prisma Client no Next.js**
 
