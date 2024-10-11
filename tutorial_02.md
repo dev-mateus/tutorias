@@ -1,6 +1,6 @@
 # Tutorial: Integrando Banco de Dados ao App de Lista de Tarefas
 
-Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao seu aplicativo de lista de tarefas, utilizando Prisma como ORM e NeonDB como servidor.
+Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao seu aplicativo de lista de tarefas criado no [tutorial 01](https://github.com/dev-mateus/tutorias/blob/main/tutorial_01.md) , utilizando Prisma como ORM e NeonDB como servidor.
 
 ## **1. Configurar o Banco de Dados PostgreSQL no NeonDB**
 
@@ -8,11 +8,11 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
    - Acesse [NeonDB](https://neon.tech/) e crie uma conta, se ainda não tiver uma.
 
 ### 1.2. **Criar um Novo Projeto**
-   - Após o login, clique em "Create Database" para criar um novo banco de dados.
-   - Escolha um nome para o banco de dados e clique em "Create".
+   - Após o login, clique em "New Project" para criar um novo banco de dados.
+   - Deixe todas as configurações default e  clique em "Create Project".
 
 ### 1.3. **Obter a URL de Conexão**
-   - Depois de criar o banco de dados, você verá as informações de conexão.
+   - Depois de criar o banco de dados, você verá as informações de conexão na tela de "Quickstart" do projeto.
    - Copie a URL de conexão fornecida (deve ser algo como `postgresql://USER:PASSWORD@HOST:PORT/DATABASE`).
 
 ## **2. Configurar o Prisma no Projeto**
@@ -30,7 +30,8 @@ Neste tutorial, você aprenderá como integrar um banco de dados PostgreSQL ao s
 
 ### 2.2. **Atualizar o Arquivo .env**
    - No seu projeto, localize o arquivo `.env` na raiz.
-   - Substitua o valor da variável `DATABASE_URL` pela URL de conexão do NeonDB:
+   - Substitua o valor da variável `DATABASE_URL` pela URL copiada no passo [1.3](#13-obter-a-url-de-conexão), essa URL é responsável pela conexão da App com o servidor NeonDB:
+   
      ```bash
      DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
      ```
